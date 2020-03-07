@@ -1,0 +1,38 @@
+<annotation>
+	<folder>Tajul7777</folder>
+	<filename>00587.jpg</filename>
+	<path>C:\Users\P A R V A Z\Desktop\Tajul Vai\Tajul7777\00587.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1360</width>
+		<height>800</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>598</xmin>
+			<ymin>524</ymin>
+			<xmax>636</xmax>
+			<ymax>550</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>car</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>648</xmin>
+			<ymin>504</ymin>
+			<xmax>721</xmax>
+			<ymax>595</ymax>
+		</bndbox>
+	</object>
+</annotation>
