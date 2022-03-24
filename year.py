@@ -3,77 +3,50 @@ import re
 import json
 import csv
 
-with open ("tags_list.csv" , "r") as f:
+with open ("bibliothek.csv" , "r") as f:
     reader = csv.reader(f)
     next(reader)
     data = {"Publications": []}
     for row in reader:
-        year = row[5]
-        title = str(row[0])+" "+str(row[4]) #add tittle and source string together
-        if(re.search("^.*2022.*$", title)):
-            year = 2022
-        elif(re.search("^.*2021.*$", title)):
+        source = row[4]
+        if(re.search("^.*2021.*$", source)):
             year = 2021
-        elif(re.search("^.*2020.*$", title)):
+        elif(re.search("^.*2020.*$", source)):
             year = 2020
-        elif(re.search("^.*2019.*$", title)):
+        elif(re.search("^.*2019.*$", source)):
             year = 2019
-        elif(re.search("^.*2018.*$", title)):
+        elif(re.search("^.*2018.*$", source)):
             year = 2018
-        elif(re.search("^.*2017.*$", title)):
+        elif(re.search("^.*2017.*$", source)):
             year = 2017
-        elif(re.search("^.*2016.*$", title)):
+        elif(re.search("^.*2016.*$", source)):
             year = 2016
-        elif(re.search("^.*2015.*$", title)):
+        elif(re.search("^.*2015.*$", source)):
             year = 2015
-        elif(re.search("^.*2014.*$", title)):
+        elif(re.search("^.*2014.*$", source)):
             year = 2014
-        elif(re.search("^.*2013.*$", title)):
+        elif(re.search("^.*2013.*$", source)):
             year = 2013
-        elif(re.search("^.*2012.*$", title)):
+        elif(re.search("^.*2012.*$", source)):
             year = 2012
-        elif(re.search("^.*2011.*$", title)):
+        elif(re.search("^.*2011.*$", source)):
             year = 2011
-        elif(re.search("^.*2010.*$", title)):
+        elif(re.search("^.*2010.*$", source)):
             year = 2010
-        elif(re.search("^.*2009.*$", title)):
+        elif(re.search("^.*2009.*$", source)):
             year = 2009
-        elif(re.search("^.*2008.*$", title)):
+        elif(re.search("^.*2008.*$", source)):
             year = 2008
-        elif(re.search("^.*2007.*$", title)):
+        elif(re.search("^.*2007.*$", source)):
             year = 2007
-        elif(re.search("^.*2006.*$", title)):
+        elif(re.search("^.*2006.*$", source)):
             year = 2006
-        elif(re.search("^.*2005.*$", title)):
+        elif(re.search("^.*2005.*$", source)):
             year = 2005
-        elif(re.search("^.*2004.*$", title)):
-        	year = 2004
-        elif(re.search("^.*2003.*$", title)):
-        	year = 2003
-        elif(re.search("^.*2002.*$", title)):
-        	year = 2002
-        elif(re.search("^.*2001.*$", title)):
-        	year = 2001
-        elif(re.search("^.*2000.*$", title)):
-        	year = 2000
-        elif(re.search("^.*1999.*$", title)):
-        	year = 1999
-        elif(re.search("^.*1998.*$", title)):
-        	year = 1998
-        elif(re.search("^.*1997.*$", title)):
-        	year = 1997
-        elif(re.search("^.*1996.*$", title)):
-        	year = 1996
-        elif(re.search("^.*1995.*$", title)):
-        	year = 1995
-        elif(re.search("^.*1994.*$", title)):
-        	year = 1994
         else:
-            year = row[5]
-        data["Publications"].append({"Title":row[0],"Authors":row[1],"Research Area":row[2],"Publication Type":row[3],"Source":row[4],"Year":year,"Link":row[6]})
+            year = 0000
+        data["Publications"].append({"Title":row[0],"Authors":row[1],"Research Area":row[2],"Publication Type":row[3],"Source":row[4],"Year":year,"Link":row[5]})
 
 
-with open ("data_json_format.json", "w") as f:
+with open ("bibliothek.json", "w") as f:
     json.dump(data, f, indent=4)
-
-
